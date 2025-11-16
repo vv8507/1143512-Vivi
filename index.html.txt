@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <header>
+        <h1>Vivi's Portfolio</h1>
+        <p class="subtitle">Welcome to my personal website</p>
+    </header>
+
+    <section class="about">
+        <img src="images/profile.jpg" alt="My Photo" class="profile" />
+        <div class="text">
+            <h2>About Me</h2>
+            <p>
+                Hi! I'm Vivi, a student passionate about learning, technology, and creativity. 
+                This is my personal portfolio website where I introduce myself and showcase my projects.
+            </p>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2>My Projects</h2>
+
+        <div class="project-card">
+            <h3>Project 1: Website Design</h3>
+            <p>A simple and clean personal website built using HTML and CSS.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Project 2: Python Game</h3>
+            <p>Created a snake game using Python and Pygame, including AI logic.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Project 3: School Assignment</h3>
+            <p>Completed coding tasks and designed solutions for computer science class.</p>
+        </div>
+    </section>
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:vivi@example.com">vivi@example.com</a></p>
+    </section>
+
+    <footer>
+        <p>© 2025 Vivi. All rights reserved.</p>
+    </footer>
+</body>
+</html>
