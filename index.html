@@ -191,16 +191,18 @@ int main() {
 
         buttons.forEach((btn) => {
             btn.addEventListener('click', () => {
-                // 找到按鈕緊接著的下一個元素 (即 .code-box)
                 const box = btn.nextElementSibling;
+                const card = btn.closest('.project-card'); // 找到父層 project-card
                 
-                // 檢查按鈕文字是否包含 'Hide' (表示目前是展開狀態)
                 const isShowing = box.classList.contains('show'); 
 
-                // 1. 切換 (Toggle) 'show' class，觸發 CSS 展開/收起動畫
+                // 1. 切換 'show' class (控制程式碼區塊的展開/收合)
                 box.classList.toggle('show');
+                
+                // 2. 切換 card 的 'expanded' class (控制卡片佔用全寬)
+                card.classList.toggle('expanded'); 
 
-                // 2. 根據目前狀態切換按鈕文字
+                // 3. 根據目前狀態切換按鈕文字
                 if (isShowing) {
                     // 如果原本是顯示狀態，現在要隱藏 (Hide -> View)
                     btn.textContent = btn.textContent.replace('Hide Code', 'View Code');
