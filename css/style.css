@@ -115,18 +115,19 @@ footer {
     }
 }
 /* 預設隱藏 code 區塊 */
+/* 預設隱藏 code 區塊 */
 .code-box {
-    .max-height: 0;
+    max-height: 0;
     overflow: hidden;
     opacity: 0;
     transition: all 0.4s ease;
-    background: #1e1e1e;
+    /* 調整：背景設為白色 */
+    background: white; 
     border-radius: 10px;
     margin-top: 10px;
     padding: 0 15px;
-    border: 1px solid transparent;
-}
-
+    /* 調整：邊框設為淺灰色 */
+    border: 1px solid #ccc; 
 }
 
 /* 展開後 */
@@ -134,13 +135,21 @@ footer {
     max-height: 800px;
     opacity: 1;
     padding: 15px;
-    border: 1px solid #444;
+    /* 調整：展開後的邊框顏色 */
+    border: 1px solid #aaa; 
 }
 
-/* 讓文字變亮，避免變成黑塊 */
-.code-box, 
+/* 讓文字變黑 */
+.code-box,
 .code-box code,
 .code-box pre {
-    color: #e6e6e6 !important;
+    /* 調整：文字顏色設為深色 */
+    color: #333 !important; 
+}
+
+/* 確保程式碼塊內的背景也是白色，如果您使用 <pre> 或 <code> 標籤 */
+.code-box pre,
+.code-box code {
+    background: transparent; /* 繼承 .code-box 的白色背景 */
 }
 
