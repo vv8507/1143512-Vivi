@@ -31,7 +31,7 @@
         <div class="projects-grid">
 
             <div class="project-card">
-                <button class="project-btn">📘 C++ Student Grade Tracker - 查看程式碼</button>
+                <button class="project-btn">📘 C++ Student Grade Tracker - View Code</button>
                 <div class="code-box">
                     <pre><code>
 // Sample C++ Code for Student Grade Tracker
@@ -103,7 +103,7 @@ int main() {
             </div>
 
             <div class="project-card">
-                <button class="project-btn">📝 Student Attendance Checker - 查看程式碼</button>
+                <button class="project-btn">📝 Student Attendance Checker - View Code</button>
                 <div class="code-box">
                     <pre><code>
 // Sample C++ Code for Attendance Checker
@@ -132,7 +132,7 @@ int main() {
             </div>
 
             <div class="project-card">
-                <button class="project-btn">🏦 C++ ATM - 查看程式碼</button>
+                <button class="project-btn">🏦 C++ ATM - View Code</button>
                 <div class="code-box">
                     <pre><code>
 // Sample C++ Banking System
@@ -194,19 +194,19 @@ int main() {
                 // 找到按鈕緊接著的下一個元素 (即 .code-box)
                 const box = btn.nextElementSibling;
                 
-                // 判斷按鈕文字是否包含「隱藏」 (表示目前是展開狀態)
-                const isShowing = box.classList.contains('show');
+                // 檢查按鈕文字是否包含 'Hide' (表示目前是展開狀態)
+                const isShowing = box.classList.contains('show'); 
 
                 // 1. 切換 (Toggle) 'show' class，觸發 CSS 展開/收起動畫
                 box.classList.toggle('show');
 
                 // 2. 根據目前狀態切換按鈕文字
                 if (isShowing) {
-                    // 如果原本是顯示狀態，現在要隱藏
-                    btn.textContent = btn.textContent.replace('隱藏', '查看');
+                    // 如果原本是顯示狀態，現在要隱藏 (Hide -> View)
+                    btn.textContent = btn.textContent.replace('Hide Code', 'View Code');
                 } else {
-                    // 如果原本是隱藏狀態，現在要顯示
-                    btn.textContent = btn.textContent.replace('查看', '隱藏');
+                    // 如果原本是隱藏狀態，現在要顯示 (View -> Hide)
+                    btn.textContent = btn.textContent.replace('View Code', 'Hide Code');
                 }
             });
         });
