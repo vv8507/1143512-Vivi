@@ -111,3 +111,22 @@ footer {
         height: 160px;
     }
 }
+/* 預設隱藏 code 區塊 */
+.code-box {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    background: #1e1e1e;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 0 15px; /* 先不顯示 padding */
+}
+
+/* 按下按鈕後展開 */
+.code-box.show {
+    max-height: 800px; /* 足夠讓程式碼展開 */
+    opacity: 1;
+    padding: 15px; /* 展開後恢復 padding */
+    border: 1px solid #444;
+}
