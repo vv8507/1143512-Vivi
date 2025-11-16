@@ -4,17 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vivi's Portfolio</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css" /> 
 </head>
 <body>
 
-    <!-- Header -->
     <header class="hero">
         <h1>Vivi's Portfolio</h1>
         <p class="subtitle">Welcome to my creative space</p>
     </header>
 
-    <!-- About Section -->
     <section class="about">
         <img src="images/profile.jpg" alt="My Photo" class="profile" />
         <div class="text">
@@ -28,19 +26,18 @@
     </section>
 
     <section class="projects">
-    <h2 class="section-title">My Projects</h2>
+        <h2 class="section-title">My Projects</h2>
 
-    <div class="projects-grid">
+        <div class="projects-grid">
 
-        <!-- Project 1 -->
-        <div class="project-card">
-            <button class="project-btn">📘 C++ Student Grade Tracker</button>
-            <div class="code-box">
-                <pre><code>
+            <div class="project-card">
+                <button class="project-btn">📘 C++ Student Grade Tracker - 查看程式碼</button>
+                <div class="code-box">
+                    <pre><code>
 // Sample C++ Code for Student Grade Tracker
-#include <iostream>
-#include <string>
-#include <iomanip> 
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;iomanip&gt;
 
 using namespace std;
 
@@ -65,84 +62,81 @@ int main() {
     
     Student students[MAX_STUDENTS];
 
-    cout << "--- Student Grade Tracker ---" << endl;
+    cout &lt;&lt; "--- Student Grade Tracker ---" &lt;&lt; endl;
 
     
-    for (int i = 0; i < MAX_STUDENTS; ++i) {
-        cout << "\nEnter details for Student " << i + 1 << endl;
+    for (int i = 0; i &lt; MAX_STUDENTS; ++i) {
+        cout &lt;&lt; "\nEnter details for Student " &lt;&lt; i + 1 &lt;&lt; endl;
         
-        cout << "Name: ";
+        cout &lt;&lt; "Name: ";
         
-        cin.ignore(); 
+        cin.ignore();
         getline(cin, students[i].name);
 
-        cout << "Score (0-100): ";
-        cin >> students[i].score;
+        cout &lt;&lt; "Score (0-100): ";
+        cin &gt;&gt; students[i].score;
 
         
         students[i].grade = calculateGrade(students[i].score);
     }
 
     
-    cout << "\n======================================" << endl;
-    cout << setw(5) << left << "No." 
-         << setw(20) << left << "Name" 
-         << setw(10) << left << "Score" 
-         << "Grade" << endl;
-    cout << "======================================" << endl;
+    cout &lt;&lt; "\n======================================" &lt;&lt; endl;
+    cout &lt;&lt; setw(5) &lt;&lt; left &lt;&lt; "No."
+             &lt;&lt; setw(20) &lt;&lt; left &lt;&lt; "Name"
+             &lt;&lt; setw(10) &lt;&lt; left &lt;&lt; "Score"
+             &lt;&lt; "Grade" &lt;&lt; endl;
+    cout &lt;&lt; "======================================" &lt;&lt; endl;
 
-    for (int i = 0; i < MAX_STUDENTS; ++i) {
-        cout << setw(5) << left << i + 1
-             << setw(20) << left << students[i].name
-             << setw(10) << left << students[i].score
-             << students[i].grade << endl;
+    for (int i = 0; i &lt; MAX_STUDENTS; ++i) {
+        cout &lt;&lt; setw(5) &lt;&lt; left &lt;&lt; i + 1
+             &lt;&lt; setw(20) &lt;&lt; left &lt;&lt; students[i].name
+             &lt;&lt; setw(10) &lt;&lt; left &lt;&lt; students[i].score
+             &lt;&lt; students[i].grade &lt;&lt; endl;
     }
-    cout << "======================================" << endl;
+    cout &lt;&lt; "======================================" &lt;&lt; endl;
 
     return 0;
 }
-
-                </code></pre>
+                    </code></pre>
+                </div>
             </div>
-        </div>
 
-        <!-- Project 2 -->
-        <div class="project-card">
-            <button class="project-btn">📝 Student Attendance Checker</button>
-            <div class="code-box">
-                <pre><code>
+            <div class="project-card">
+                <button class="project-btn">📝 Student Attendance Checker - 查看程式碼</button>
+                <div class="code-box">
+                    <pre><code>
 // Sample C++ Code for Attendance Checker
-#include <iostream>
+#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
     int total, attended;
-    cout << "Total classes: ";
-    cin >> total;
-    cout << "Classes attended: ";
-    cin >> attended;
+    cout &lt;&lt; "Total classes: ";
+    cin &gt;&gt; total;
+    cout &lt;&lt; "Classes attended: ";
+    cin &gt;&gt; attended;
 
     double percent = (attended * 100.0) / total;
-    cout << "Attendance: " << percent << "%";
+    cout &lt;&lt; "Attendance: " &lt;&lt; percent &lt;&lt; "%";
 
-    if (percent >= 75) 
-        cout << " (Good)";
-    else 
-        cout << " (Poor)";
+    if (percent >= 75)
+        cout &lt;&lt; " (Good)";
+    else
+        cout &lt;&lt; " (Poor)";
 
     return 0;
 }
-                </code></pre>
+                    </code></pre>
+                </div>
             </div>
-        </div>
 
-        <!-- Project 3 -->
-        <div class="project-card">
-            <button class="project-btn">🏦 C++ ATM</button>
-            <div class="code-box">
-                <pre><code>
+            <div class="project-card">
+                <button class="project-btn">🏦 C++ ATM - 查看程式碼</button>
+                <div class="code-box">
+                    <pre><code>
 // Sample C++ Banking System
-#include <iostream>
+#include &lt;iostream&gt;
 using namespace std;
 
 class Bank {
@@ -157,14 +151,14 @@ public:
     }
 
     void withdraw(int amt) {
-        if (amt > balance)
-            cout << "Insufficient funds\n";
+        if (amt &gt; balance)
+            cout &lt;&lt; "Insufficient funds\n";
         else
             balance -= amt;
     }
 
     void show() {
-        cout << "Balance: " << balance << endl;
+        cout &lt;&lt; "Balance: " &lt;&lt; balance &lt;&lt; endl;
     }
 };
 
@@ -175,34 +169,48 @@ int main() {
     acc.show();
     return 0;
 }
-                </code></pre>
+                    </code></pre>
+                </div>
             </div>
+
         </div>
+    </section>
 
-    </div>
-</section>
-
-<!-- JavaScript for toggle -->
-<script>
-    const buttons = document.querySelectorAll('.project-btn');
-    buttons.forEach((btn) => {
-        btn.addEventListener('click', () => {
-            const box = btn.nextElementSibling;
-            box.classList.toggle('show');
-        });
-    });
-</script>
-
-
-    <!-- Contact Section -->
     <section class="contact">
         <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:vivi@example.com">vivi96810@gmail.com</a></p>
+        <p>Email: <a href="mailto:vivi96810@gmail.com">vivi96810@gmail.com</a></p>
     </section>
 
     <footer>
         <p>© 2025 Vivi. All rights reserved.</p>
     </footer>
+
+    <script>
+        // 獲取所有專案按鈕
+        const buttons = document.querySelectorAll('.project-btn');
+
+        buttons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                // 找到按鈕緊接著的下一個元素 (即 .code-box)
+                const box = btn.nextElementSibling;
+                
+                // 判斷按鈕文字是否包含「隱藏」 (表示目前是展開狀態)
+                const isShowing = box.classList.contains('show');
+
+                // 1. 切換 (Toggle) 'show' class，觸發 CSS 展開/收起動畫
+                box.classList.toggle('show');
+
+                // 2. 根據目前狀態切換按鈕文字
+                if (isShowing) {
+                    // 如果原本是顯示狀態，現在要隱藏
+                    btn.textContent = btn.textContent.replace('隱藏', '查看');
+                } else {
+                    // 如果原本是隱藏狀態，現在要顯示
+                    btn.textContent = btn.textContent.replace('查看', '隱藏');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
