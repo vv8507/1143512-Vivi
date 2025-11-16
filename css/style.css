@@ -58,24 +58,18 @@ body {
 
 .projects-grid {
     display: grid;
-    /* 確保有足夠的格線來佈局卡片 */
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
 }
 
-/* 核心修正：讓展開的卡片佔用整個格線的寬度 */
-.project-card.expanded {
-    grid-column: 1 / -1; /* 佔據從第一條線到最後一條線的所有欄位 */
-}
-
 .project-card {
     background: white;
-    padding: 25px; 
+    padding: 25px; /* 內邊距，code-box 需要抵銷 */
     border-radius: 18px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform 0.2s, box-shadow 0.2s;
     overflow: hidden;
-    position: relative; 
+    position: relative; /* 確保 code-box 寬度計算正確 */
 }
 
 .project-card:hover {
@@ -83,7 +77,7 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* Project Button Style */
+/* Project Button Style (Optional) */
 .project-btn {
     display: block;
     width: 100%;
@@ -104,34 +98,38 @@ body {
 }
 
 
-/* 程式碼區塊樣式 - 確保白底黑字和收合動畫 */
+/* 程式碼區塊樣式 - 實現收合和白底黑字 */
 .code-box {
-    /* 預設隱藏 */
+    /* 預設隱藏 (高度為零，不透明度為零) */
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     transition: all 0.4s ease;
     
-    /* 程式碼樣式：白底黑字 */
+    /* 程式碼樣式修正：白底黑字 */
     background: white; 
     border-radius: 10px;
-    border: 1px solid #ccc; 
-    border-top: none; 
     
-    /* 保持在卡片內，由 expanded class 控制父元素寬度 */
-    width: auto; 
-    margin: 0 -25px; /* 為了讓邊框延伸到卡片邊緣，抵銷卡片的 padding */
-    padding: 0 25px; /* 內容的 padding */
+    /* 寬度修正：讓它佔滿卡片並抵銷卡片 padding */
+    width: calc(100% + 50px); /* 100% + 左右 padding (25px * 2) */
+    margin-left: -25px;    
+    margin-right: -25px;   
+    box-sizing: border-box; 
+    
+    /* 重新設定程式碼內容的內邊距 */
+    padding: 0 25px; 
+    border: 1px solid #ccc; /* 淺灰色邊框 */
+    border-top: none; /* 頂部邊框不需要，避免與按鈕重疊 */
 }
 
 /* 展開後 */
 .code-box.show {
-    max-height: 800px; 
+    max-height: 800px; /* 足夠大的高度讓內容顯示 */
     opacity: 1;
-    padding-top: 15px; 
-    padding-bottom: 15px;
+    padding-top: 15px; /* 展開後頂部加入空間 */
+    padding-bottom: 15px; /* 展開後底部加入空間 */
     border: 1px solid #aaa; 
-    border-top: 1px solid #aaa; 
+    border-top: 1px solid #aaa; /* 展開後加上頂部邊框 */
 }
 
 /* 確保程式碼內的文字是黑色的 */
@@ -139,13 +137,14 @@ body {
 .code-box code,
 .code-box pre {
     color: #333 !important; 
-    white-space: pre-wrap; 
+    white-space: pre-wrap; /* 允許程式碼在小螢幕上換行 */
     word-break: break-all;
 }
 
 .code-box pre,
 .code-box code {
-    background: transparent; 
+    background: transparent; /* 繼承 .code-box 的白色背景 */
+    /* 移除 pre/code 可能自帶的額外邊距，讓它緊貼 .code-box 的內邊距 */
     margin: 0; 
     padding: 0; 
 }
