@@ -123,13 +123,22 @@ footer {
     background: #1e1e1e;
     border-radius: 10px;
     margin-top: 10px;
-    padding: 0 15px; /* 先不顯示 padding */
+    padding: 0 15px;
+    border: 1px solid transparent;
 }
 
-/* 按下按鈕後展開 */
+/* 展開後 */
 .code-box.show {
-    max-height: 800px; /* 足夠讓程式碼展開 */
+    max-height: 800px;
     opacity: 1;
-    padding: 15px; /* 展開後恢復 padding */
+    padding: 15px;
     border: 1px solid #444;
 }
+
+/* 讓文字變亮，避免變成黑塊 */
+.code-box, 
+.code-box code,
+.code-box pre {
+    color: #e6e6e6 !important;
+}
+
