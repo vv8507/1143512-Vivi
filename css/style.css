@@ -111,3 +111,40 @@ footer {
         height: 160px;
     }
 }
+/* Project Button */
+.project-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.project-btn:hover {
+    background: #3577c4;
+}
+
+/* Code Box (hidden by default) */
+.code-box {
+    background: #f4f4f4;
+    margin-top: 12px;
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+.code-box.show {
+    display: block;
+}
+
+code {
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+}
